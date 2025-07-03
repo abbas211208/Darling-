@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Envelope for Zubi</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffc166;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .envelope {
+      width: 200px;
+      height: 120px;
+      background: #7ecbff;
+      position: relative;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    }
+
+    .envelope::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 60px 100px 0 100px;
+      border-color: #dff3ff transparent transparent transparent;
+    }
+
+    .heart {
+      width: 40px;
+      height: 40px;
+      background: red;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      z-index: 2;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -20px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -20px;
+      top: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 1.4rem;
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .subtext {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="letter.html">
+    <div class="envelope">
+      <div class="heart"></div>
+    </div>
+  </a>
+
+  <div class="message"></div>
+  <div class="subtext">Click on my Heart
+  <style>colour: black;</style>
+  </div>
+
+</body>
+</html>

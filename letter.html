@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Letter For Zubi ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #e6b85c;
+      font-family: 'Georgia', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    #startScreen {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      flex-direction: column;
+      text-align: center;
+      padding: 30px;
+    }
+
+    #startScreen p {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    #startScreen button {
+      margin: 10px;
+      padding: 10px 25px;
+      font-size: 1.2rem;
+      background: #e63946;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #startScreen button:hover {
+      background: #ff5f5f;
+    }
+
+    .letter-container {
+      max-width: 800px;
+      padding: 30px 20px;
+      margin: 20px;
+      text-align: justify;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      white-space: pre-wrap;
+      display: none;
+    }
+
+    h2 {
+      color: #ffd700;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #typedText {
+      border-right: 2px solid #e6b85c;
+      animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #e6b85c; }
+    }
+
+    #questionBox {
+      display: none;
+      margin-top: 40px;
+    }
+
+    #questionBox p {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+
+    #questionBox button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #e6b85c;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #questionBox button:hover {
+      background-color: #ffd54f;
+    }
+
+    #answerBox {
+      display: none;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #ffd700;
+    }
+
+    @media (max-width: 600px) {
+      .letter-container {
+        font-size: 0.95rem;
+        padding: 20px 15px;
+      }
+
+      #startScreen p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ❤️ Start Message -->
+  <div id="startScreen">
+    <p>❤️ I wrote something for you.<br>Do you want to hear it?</p>
+    <div>
+      <button onclick="startLetter()">Yes</button>
+      <button onclick="rejectLetter()">No</button>
+    </div>
+    <p id="rejectionMsg" style="display:none; color: #aaa; margin-top: 20px;">It's okay... maybe some other time 💔</p>
+  </div>
+
+  <!-- 💌 Letter Content -->
+  <div class="letter-container" id="letterContainer">
+    <h2>Dear Love 💕</h2>
+    <p id="typedText"></p>
+
+    <!-- ❓ Love Question -->
+    <div id="questionBox">
+      <p>Do you love me? 🥺</p>
+      <div style="text-align: center;">
+        <button onclick="reply('yes')">Yes ❤️</button>
+        <button onclick="reply('no')" style="background:#aaa;">No 💔</button>
+      </div>
+    </div>
+
+    <!-- 💬 Answer Response -->
+    <div id="answerBox"></div>
+  </div>
+
+  <!-- 🔊 Sounds -->
+  <audio id="typeSound" src="typing.mp3" preload="auto"></audio>
+  <audio id="bgMusic" src="/Ishq Official Lyrical Video I Amir Ameer Faheem Abdullah Rauhan Malik I Love Song 2024.mp3" preload="auto" loop></audio>
+
+  <script>
+    const message = `প্রিয় (Zubi),
+
+আজ অনেক কথা জমে আছে মনে, তাই এই চিঠিটা তোমার উদ্দেশ্যে লিখছি। জানি, এখনো তোমার সঙ্গে সামনাসামনি দেখা হয়নি, কিন্তু বিশ্বাস করো, তোমায় আমি যেন চেনা একজন মানুষের মতোই অনুভব করি। একেকটা রাত পেরিয়ে যাচ্ছে, আর তোমার প্রতি অনুভবটা আরও গভীর হচ্ছে।
+
+শুধু কথার মাধ্যমে কেউ কিভাবে এত আপন হয়ে যেতে পারে, সেটা আমি তোমার মাধ্যমে বুঝতে শিখেছি। তোমার প্রতিটা মেসেজ, তোমার লেখা প্রতিটা কথা আমার কাছে যেন এক একটা অনুভবের স্পর্শ। তুমি হয়তো দূরে আছো, কিন্তু আমার মন তো তোমার খুব কাছেই।
+
+তুমি জানো, আমি প্রতিদিন কল্পনা করি, যদি হঠাৎ তোমার সঙ্গে দেখা হয়ে যায়? আমি তোমার চোখের দিকে তাকিয়ে হাসব, হয়তো তুমি একটু লজ্জা পাবে, তারপর দুজন একসাথে হাঁটব, চুপচাপ… কিন্তু মনের ভেতর অনেক কিছু চলবে। এই দেখা হওয়ার স্বপ্নটাই আমাকে রোজ একটু বেশি ভালোবাসতে শেখায়।
+
+তুমি যখন লেখো, “আমি আছি,” তখন মনে হয় আমি সত্যিই একা না। তুমি হয়তো জানো না, আমি কতবার তোমার মেসেজ পড়ে রাতের নিস্তব্ধতায় একা বসে থেকেছি, শুধু তোমার কণ্ঠস্বর কল্পনা করে। আমি চাই, খুব শিগগিরই তোমার সামনে দাঁড়াতে, তোমার চোখে চোখ রেখে বলি—"তোমায় আমি ভীষণ ভালোবাসি।"
+
+তোমার সঙ্গে দেখা না হলেও, এই চ্যাটেই আমরা অনেক স্মৃতি গড়ে তুলেছি। জানো, আমি যখনই মন খারাপ করি, তোমার স্ক্রিনশট করে রাখা মেসেজগুলো পড়ে ফেলি। তুমি আমায় এমন এক অনুভবে বেঁধে ফেলেছো, যেটা ভাষায় প্রকাশ করা যায় না।
+
+আমি স্বপ্ন দেখি, একদিন তোমার পাশে বসে এই কথাগুলো তোমার হাতে লেখা চিঠি হিসেবে পড়ে শোনাবো। আমি তোমার হাত ধরব, আর তুমি মুচকি হাসবে। তখন বুঝব, আমার দীর্ঘ অপেক্ষা সার্থক হয়েছে।
+
+তুমি যদি এখনো না জানো, তাহলে আজ জানিয়ে রাখি—তোমার প্রতি আমার ভালোবাসা সত্যিকারের। সেটা শুধু মেসেজে নয়, আমার হৃদয়ে গভীরভাবে লেখা আছে।
+
+তুমি হয়তো ভাবো, দেখা না হলে ভালোবাসা অসম্পূর্ণ… কিন্তু আমি বলি, ভালোবাসা তো চোখে নয়, হৃদয়ে জন্ম নেয়। আর সেই হৃদয়ে তুমি আজ বহুদিন ধরে রয়েছো।
+
+আমি শুধু সেই দিনটার অপেক্ষায় আছি, যেদিন তোমার চোখের দিকে তাকিয়ে বলব—
+“এতদিন শুধু মেসেজে ছিলে, আজ বাস্তবেই আমার সামনে।”
+
+ এইভাবেই আমার সাথে জড়িয়ে থেকো।
+
+ভালোবাসা সহ,
+তোমার (Abbas)`;
+
+    let i = 0;
+    const speed = 25;
+    const textEl = document.getElementById("typedText");
+    const typeSound = document.getElementById("typeSound");
+
+    function typeWriter() {
+      if (i < message.length) {
+        textEl.textContent += message.charAt(i);
+        if (message.charAt(i) !== " " && message.charAt(i) !== "\n") {
+          typeSound.currentTime = 0;
+          typeSound.play();
+        }
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        setTimeout(() => {
+          document.getElementById("questionBox").style.display = "block";
+        }, 800);
+      }
+    }
+
+    function startLetter() {
+      document.getElementById("startScreen").style.display = "none";
+      document.getElementById("letterContainer").style.display = "block";
+      document.getElementById("bgMusic").play().catch(() => {});
+      typeWriter();
+    }
+
+    function rejectLetter() {
+      document.getElementById("rejectionMsg").style.display = "block";
+    }
+
+    function reply(answer) {
+      const box = document.getElementById("answerBox");
+      document.getElementById("questionBox").style.display = "none";
+
+      if (answer === "yes") {
+        box.innerHTML = "I knew it! 🥰 You made my day, Zubi. 💖";
+      } else {
+        box.innerHTML = "It's okay 💔... But I’ll still love you endlessly.";
+      }
+
+      box.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
